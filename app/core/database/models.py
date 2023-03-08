@@ -26,3 +26,7 @@ class VehicleDatabase(Base):
 class SortBy(str, Enum):
     ASC = "ASC"
     DESC = "DESC"
+
+class ExportFormat(str, Enum):
+    CSV = "CSV"
+    JSON = "JSON"

@@ -3,6 +3,7 @@ This module defines the model for vehicle data.
 """
 
 from typing import Optional
+from fastapi.encoders import jsonable_encoder
 
 from pydantic import BaseModel
 
@@ -23,3 +24,6 @@ class VehicleModel(BaseModel):
 
     class Config:
         orm_mode = True
+
+    def _json(self):
+        return jsonable_encoder(self.dict())
