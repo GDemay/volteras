@@ -30,9 +30,7 @@ class VehicleDataService:
         skip: int = 0,
         offset: int = 0,
     ) -> List[VehicleDatabase]:
-        query = self.db.query(VehicleDatabase).filter(
-            VehicleDatabase.vehicle_id == vehicle_id
-        )
+        query = self.db.query(VehicleDatabase).filter(VehicleDatabase.vehicle_id == vehicle_id)
 
         if initial_timestamp is not None:
             query = query.filter(VehicleDatabase.timestamp >= initial_timestamp)

@@ -50,9 +50,7 @@ async def get_vehicle_data_by_id(id: int, db: Session = Depends(get_db)):
     vehicle_data_service = VehicleDataService(db=db)
     vehicle_data = vehicle_data_service.get_vehicle_data_by_id(id=id)
     if vehicle_data is None:
-        raise HTTPException(
-            status_code=404, detail=f"Vehicle data with id {id} not found"
-        )
+        raise HTTPException(status_code=404, detail=f"Vehicle data with id {id} not found")
     return vehicle_data
 
 
